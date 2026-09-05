@@ -1,5 +1,9 @@
 # video-shot-agent 진행 상황
 
+## 규칙
+- **레슨 리포트 업데이트는 기본 포함**: 학습 세션마다 lesson-report.html → Artifact 재발행
+- Artifact URL: https://claude.ai/code/artifact/54c2fd62-99e1-475b-818e-281179056953
+
 ## 현재 상태: SKILL.md 완성, Tier 2 검증 대기
 
 ## 완료
