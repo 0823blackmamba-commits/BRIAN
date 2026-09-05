@@ -189,3 +189,33 @@ Text(기획) → Image(검토) → Video(완성)
 
 5가지 유형 콘텐츠 플랜 → 배치 생성:
 `Review → Unboxing → Street Interview → Challenge → ASMR`
+
+### 크레딧 비용 (Seedance 기준)
+
+| 해상도 | 길이 | 크레딧 |
+|--------|------|--------|
+| 1080p | 8초 | 72 |
+| 4K | 8초 | 176 |
+
+- 드래프트는 1080p, 최종만 4K 재생성
+
+### 얼굴·캐릭터 일관성 프롬프트 (필수)
+
+- 모든 영상 프롬프트에 `"keep the same character"` 포함
+- 없으면 씬마다 얼굴이 달라질 수 있음
+- 가상 한국인 모델: `"original fictional Korean woman"` 명시
+
+### 로고 보존 (제품 광고)
+
+- 제품 이미지 + 로고 파일 동시 업로드
+- 프롬프트: `"do NOT redraw or change the logo, preserve logo exactly"`
+- 제품은 고정, 배경(빛·파티클·안개)만 움직이게 설계 → 로고 왜곡 방지
+
+### 긴 영상 제작 전략
+
+- 8~15초 클립 단위 생성 → 외부 편집 툴에서 이어붙이기
+- Higgsfield 내 단일 긴 영상보다 클립 조합이 품질 우수
+
+### 주의: 모바일 앱 비공식
+
+- App Store / Google Play의 Higgsfield 앱은 **비공식** → 웹 버전만 사용

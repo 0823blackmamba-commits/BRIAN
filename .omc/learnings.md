@@ -1,5 +1,72 @@
 # Higgsfield 학습 내용 (영상 분석 기반)
 
+## 영상 5: Higgsfield A-Z 실전 워크플로우 (내 얼굴로 광고 만들기)
+URL: https://youtu.be/Nc6ywbkTmZU
+씬 수: 79개
+
+### 전체 A-Z 워크플로우 (사진 → 이미지 → 영상)
+
+```
+1. 내 사진 업로드 (media_upload_widget)
+2. GPT Image 2.0으로 캐릭터 이미지 생성 (내 얼굴 레퍼런스)
+3. 생성된 이미지를 레퍼런스로 영상 생성 (Seedance / Kling)
+4. "keep the same character" 프롬프트 필수 포함
+```
+
+### 가상 모델 생성 팁
+
+- **한국인 여성 생성 시 필수**: `"original fictional Korean woman"` 명시
+- 그냥 "woman"만 쓰면 서양 모델로 생성됨
+- "Korean"만으로 부족한 경우 있음 → "fictional Korean woman" 조합 권장
+
+### 로고 적용 (제품 광고)
+
+- 제품 이미지 + 로고 파일 동시 업로드
+- 프롬프트에 반드시 추가: `"do NOT redraw or change the logo, preserve logo exactly"`
+- 로고가 변형되는 걸 방지하는 핵심 문구
+
+### 제품 영상 팁
+
+- **제품은 고정, 배경만 애니메이션** → 로고 왜곡 방지
+- 병·캔 등 회전시키면 로고가 뒤틀림 → 제품 자체를 움직이지 않는 것이 원칙
+- 배경 빛, 파티클, 안개 등을 움직여서 다이나믹한 효과 연출
+
+### 크레딧 상세 (Seedance 기준)
+
+| 해상도 | 길이 | 크레딧 |
+|--------|------|--------|
+| 1080p | 8초 | 72 크레딧 |
+| 4K | 8초 | 176 크레딧 |
+
+- 드래프트는 1080p로 → 최종 확인 후 4K 재생성
+
+### 얼굴 일관성 프롬프트
+
+- 모든 영상 프롬프트에 `"keep the same character"` 포함 필수
+- 없으면 씬마다 다른 얼굴로 생성될 수 있음
+
+### 긴 영상 제작 전략
+
+- 8~15초 클립 여러 개 생성 → 영상 편집 툴에서 이어붙이기
+- Higgsfield 자체에서 긴 영상 직접 생성보다 클립 단위 조합이 품질 우수
+
+### Marketing Studio / Shorts Studio
+
+- **Marketing Studio**: 제품 광고 전용 UI. 레퍼런스 이미지 + 텍스트 → 자동 광고 생성
+- **Shorts Studio**: 숏폼 콘텐츠 자동화. 프리셋 기반으로 배치 생성 가능
+
+### 배치 이미지 생성
+
+- 동일 프롬프트로 여러 변형 이미지 동시 생성 가능
+- `generate_image_batch` 사용 → 최적 이미지 선택 후 영상화
+
+### 주의사항
+
+- **모바일 앱 (App Store / Google Play) 비공식** → 반드시 웹 버전 사용
+- 비공식 앱은 데이터 탈취 위험 있음
+
+---
+
 ## 영상 4: Claude + Higgsfield MCP 수익화 실전
 URL: https://youtu.be/OgyotKtYb_4
 씬 수: 64개
