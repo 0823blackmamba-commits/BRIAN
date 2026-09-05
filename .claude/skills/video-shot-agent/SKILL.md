@@ -51,7 +51,11 @@ mcp__Higgsfield__video_analysis_status
 각 씬마다:
 - `scene_description` (또는 동등 필드)를 기반으로 **영어 생성 프롬프트** 작성
 - 원본 씬의 분위기·카메라 무브·색감을 반영한다
-- 기본 모델: `seedance_2_5` (일반 영상) / `kling3_0` (멀티샷·모션 전이)
+- 프롬프트 구성 8요소를 최대한 포함한다:
+  - **이미지 5요소**: Subject, Background, Composition, Lighting, Style
+  - **영상 추가 3요소**: Camera Move, Subject Motion, Cut Duration
+  - **오디오 3요소** (audio 있을 경우): BGM, SFX, Dialogue
+- 기본 모델: `minimax_h3` (일상·가성비) / `seedance_2_5` (복잡·화려·30초 롱테이크) / `kling3_0` (멀티샷·모션 전이)
 
 ### 5. 샷 생성 (generate_video_batch)
 
