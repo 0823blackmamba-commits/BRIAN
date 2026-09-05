@@ -1,0 +1,98 @@
+# Higgsfield 학습 내용 (영상 분석 기반)
+
+## 영상 1: Higgsfield 기초 사용법
+URL: https://youtu.be/VKHOgcHSpsg
+씬 수: 50개
+
+### 핵심
+
+**모델 선택**
+- `minimax_h3`: 일상 씬, 가성비
+- `seedance_2_5`: 복잡·화려한 샷, 최대 30초 롱테이크
+- `kling3_0`: 멀티샷, 모션 전이
+- `nano_banana_pro`: 4K 이미지
+- `gpt_image_2`: 글로벌 1위 이미지 모델
+
+**프롬프트 8요소**
+- 이미지 5: Subject · Background · Composition · Lighting · Style
+- 영상 추가 3: Camera Move · Subject Motion · Cut Duration
+- 오디오 3: BGM · SFX · Dialogue
+
+**기능**
+- 이미지: 4K 지원, GPT Image 2 최고 평가
+- 영상: Seedance(화려), Minimax(가성비)
+- 오디오: QWEN 3.0 (Alibaba) 최고 평가
+- 슈퍼컴퓨터: Claude/Gemini로 스토리보드 → 이미지/영상
+- 커넥터: TikTok·Instagram 직접 업로드
+- MCP/CLI: Claude 채팅에서 직접 Higgsfield 호출
+- Academy: 무료 강의 (Movie Making, UGC, Automation)
+- 대회: 상금 최대 $1,000,000
+
+**요금제**: Starter $19 / Plus $66 / Ultra $279
+
+---
+
+## 영상 2: Higgsfield MCP × Claude 통합 실전
+URL: https://youtu.be/zv0gHwKQT8M
+씬 수: 93개
+
+### 3단계 프로덕션 원칙 (핵심!)
+
+```
+1. Text (기획) - Claude 기획, 크레딧 0 소모
+2. Image (검토) - 이미지로 먼저 확인, 저비용
+3. Video (완성) - 최종 영상 생성, 고비용
+```
+절대 영상부터 바로 생성하지 않는다.
+
+### MCP 연결 방법
+
+1. Higgsfield → MCP → URL 복사
+2. Claude.ai → 계정 설정 → Connectors → Add → Custom Connector
+3. URL 붙여넣기 → 이름: 'Higgsfield' → 승인
+
+**권한 설정**
+| 도구 | 설정 |
+|------|------|
+| Cancel Auto-renewal | Block (결제 보호) |
+| Generate 3D/Audio/Image/Video | Ask Permission (크레딧 관리) |
+| Upload Media, Sync Agents | Always Allow |
+
+### 캐릭터 등록 (@me)
+
+1. 셀카 6장 (정면·측면·상하)
+2. Higgsfield → Image → GPT Image 2.0 → **4K** 해상도 → 캐릭터 시트 생성
+3. Cinema Studio → My Elements → New Element → '@me'
+4. Claude 프롬프트: `Me가 주인공, Office가 배경`
+5. 배경도 @office 등으로 등록 가능
+
+### Skills (.skll) 시스템
+
+1. .skll 파일 다운로드
+2. Claude → 계정 설정 → Skills → Add → Upload Skill
+3. `/slash-명령어` 로 호출
+
+**제공 스킬 예시**
+| 슬래시 명령 | 기능 |
+|------------|------|
+| `/higgs-3d-shorts-creator` | 3D 캐릭터 쇼츠 생성 |
+| `/higgs-explainer-studio` | 교육 설명 영상 |
+| `/higgs-ad-scripter` | 광고 스크립트 + 이미지 (법률 검토 포함) |
+
+### 앱 기능
+
+| 앱 | 용도 |
+|----|------|
+| Bullet Time Scene | 사진 1장 → 제품 360° 회전 영상 |
+| Mixed Media → Canvas | 실제 영상 → 애니메이션/드로잉 스타일 |
+
+### 비용
+
+- 5초 영상 ≈ 50 크레딧
+- Claude 기획 단계: 크레딧 0
+
+### 팁
+
+- Claude에 긴 텍스트 붙여넣기: `Ctrl+Shift+V` (서식 없이)
+- 이미지 생성은 항상 4K로 (나중에 다운스케일 가능, 반대 불가)
+- 드래프트는 저해상도 → 최종만 고성능 모델로

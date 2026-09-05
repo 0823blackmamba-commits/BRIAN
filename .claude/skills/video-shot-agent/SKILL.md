@@ -131,3 +131,41 @@ mcp__Higgsfield__show_generation_by_ids
 | Tier 3 | 전체 씬 생성 |
 
 기본값: **Tier 2** (레퍼런스 영상 1개로 검증 후 Tier 3 진행)
+
+---
+
+## 핵심 학습 (Higgsfield MCP 튜토리얼 영상 기반)
+
+### 3단계 프로덕션 원칙
+
+```
+Text(기획) → Image(검토) → Video(완성)
+```
+- 영상 바로 생성 금지. 이미지로 먼저 확인 후 진행.
+- Claude 기획 단계는 크레딧 소모 없음. 영상 5초 ≈ 50 크레딧.
+
+### MCP 권한 설정 권장값
+
+| 도구 | 설정 |
+|------|------|
+| Cancel Auto-renewal | Block |
+| Generate 3D / Audio / Image / Video | Ask Permission |
+| Upload Media / Sync Agents | Always Allow |
+
+### 캐릭터 일관성: @me 등록
+
+1. 셀카 6장 (정면·측면·위아래)
+2. GPT Image 2.0으로 4K 캐릭터 시트 생성
+3. Cinema Studio → My Elements → `@me` 등록
+4. Claude 프롬프트: `"Me가 주인공, Office가 배경"`
+
+### 유용한 내장 앱
+
+| 앱 | 용도 |
+|----|------|
+| Bullet Time Scene | 사진 1장 → 제품 360° 회전 영상 |
+| Mixed Media → Canvas | 실제 영상 → 애니메이션 스타일 변환 |
+
+### Claude 붙여넣기 팁
+
+- 긴 텍스트: `Ctrl+Shift+V` (서식 없이 붙여넣기)
