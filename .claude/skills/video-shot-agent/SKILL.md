@@ -238,3 +238,52 @@ Hook (0~5s) → 비교/증거 (5~13s) → 기능 설명 (13~21s)
 ### 주의: 모바일 앱 비공식
 
 - App Store / Google Play의 Higgsfield 앱은 **비공식** → 웹 버전만 사용
+
+---
+
+## 외부 소스 학습 (웹 리서치)
+
+### MCP 설치 원라인 (Claude Code 터미널)
+
+```bash
+claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp
+```
+- OAuth 인증, API 키 불필요. 무료 티어 월 150 크레딧.
+
+### Popcorn (AI 스토리보드)
+
+- 사진 최대 4장 (캐릭터·배경·오브젝트·무드) 동시 입력
+- 씬 간 캐릭터·조명 일관성 자동 유지 → 영상 전 구도 먼저 확정
+- Sora 2로 원클릭 내보내기 가능
+
+### Hook Generator
+
+- 제품 정보 입력 → 3~5개 바이럴 훅 아이디어 자동 생성
+- Marketing Studio 내 통합
+
+### Seedance 프롬프트 4요소 구조
+
+```
+① 피사체 동작 → ② 배경·조명 → ③ 카메라 무브 → ④ 분위기
+```
+
+카메라 키워드: `dolly in` / `truck left` / `arc shot` / `push in` /
+`pull back wide` / `handheld follow` / `crane up` / `orbital move`
+
+### @태그 레퍼런스 시스템
+
+- `@파일명`으로 업로드 이미지를 생성 제약(constraint)으로 적용
+- 최대 9장 동시 입력 가능 (모델에 따라)
+
+### 드래프트 검증 (크레딧 절약)
+
+1080p 생성 전 **720p로 먼저 구도·모션 검증** → 확정 후 1080p/4K 재생성
+
+### 플랫폼 비율 명시 필수
+
+- 16:9 vs 9:16 반드시 지정 — 틀리면 크레딧 낭비
+- 각 플랫폼 사이즈 맞춰 배치 팬아웃 가능
+
+### 프롬프트 템플릿 라이브러리 구축
+
+잘 작동한 프롬프트를 저장해 자산화 — 클라이언트·콘텐츠 유형별 관리
