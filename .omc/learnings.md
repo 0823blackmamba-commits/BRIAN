@@ -1,5 +1,58 @@
 # Higgsfield 학습 내용 (영상 분석 기반)
 
+## 영상 4: Claude + Higgsfield MCP 수익화 실전
+URL: https://youtu.be/OgyotKtYb_4
+씬 수: 64개
+
+### SKILL.md 자동 광고 파이프라인
+
+파일명: `AION_Video_Factory_SKILL.md`
+
+```
+업로드 → Claude 저장 → /slash 호출
+→ 1. 트렌딩 광고 리서치
+→ 2. Hook + 아이디어 생성
+→ 3. 5가지 유형 콘텐츠 플랜
+→ 4. 배치 생성 (20개+)
+```
+
+### 광고 5가지 유형
+
+Review / Unboxing / Street Interview / Challenge / ASMR
+
+### 수익화 방법
+
+1. 크몽 영상 제작 서비스: 건당 ~170,000 KRW
+2. 자체 브랜드 SNS 마케팅
+3. AI 인플루언서 (얼굴 일관성 활용)
+
+### 중요 프롬프트 팁
+
+- **한국 모델 필수 지정**: 기본값은 서양 모델 출력
+- 예: `Korean female model, Korean indoor background`
+- 안 하면: 서양 배경·모델로 생성됨
+
+### Seedance 업데이트
+
+- Seedance 2.0 → **4K** 지원 (Full HD → 4K 업그레이드)
+- Higgsfield에서 "Seedance 2.0 4K" 직접 선택 가능
+
+### 캐릭터 얼굴 일관성
+
+- 다른 씬·스타일에서도 동일 얼굴 유지 가능
+- AI 인플루언서 비즈니스의 핵심 기술
+
+### MCP 연결 재확인 (씬 19-26)
+
+```
+Claude → Customize → Connectors → + → Custom Connector
+Higgsfield MCP URL 붙여넣기 → 이름 'Higgsfield' → Add → Allow
+```
+연결 완료 후 도구 목록:
+Create Voice / Dubbing / Generate 3D / Generate Audio / Generate Image / Generate Video
+
+---
+
 ## 영상 3: Higgsfield 실사용자 모델 비교 리뷰
 URL: https://youtu.be/oQiKI-DLzVM
 씬 수: 58개

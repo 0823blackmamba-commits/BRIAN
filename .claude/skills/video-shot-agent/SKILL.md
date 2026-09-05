@@ -178,3 +178,14 @@ Text(기획) → Image(검토) → Video(완성)
 ### Claude 붙여넣기 팁
 
 - 긴 텍스트: `Ctrl+Shift+V` (서식 없이 붙여넣기)
+
+### 프롬프트 국가·모델 지정 (필수)
+
+- 기본값은 **서양 모델·배경** 출력 → 한국 콘텐츠는 반드시 명시
+- 예: `Korean female model in her 20s, Korean indoor background`
+- Seedance 2.0은 **4K** 버전 별도 존재 → 최종 출력 시 `Seedance 2.0 4K` 지정
+
+### 광고 영상 배치 생산 패턴
+
+5가지 유형 콘텐츠 플랜 → 배치 생성:
+`Review → Unboxing → Street Interview → Challenge → ASMR`
