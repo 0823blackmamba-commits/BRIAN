@@ -55,7 +55,16 @@ mcp__Higgsfield__video_analysis_status
   - **이미지 5요소**: Subject, Background, Composition, Lighting, Style
   - **영상 추가 3요소**: Camera Move, Subject Motion, Cut Duration
   - **오디오 3요소** (audio 있을 경우): BGM, SFX, Dialogue
-- 기본 모델: `minimax_h3` (일상·가성비) / `seedance_2_5` (복잡·화려·30초 롱테이크) / `kling3_0` (멀티샷·모션 전이)
+- 기본 모델 선택 기준:
+
+| 용도 | 추천 모델 | 비고 |
+|------|-----------|------|
+| 최고 품질 영상 | `seedance_2_5` | 크레딧 높음, end-game |
+| I2V·모션 컨트롤 | `kling3_0` | 가성비·품질 균형 최고 |
+| 빠른 드래프트 | `grok_imagine_2` | 속도·비용 우선 |
+| 일상·가성비 | `minimax_h3` | 멀티샷 지원 |
+| 4K 이미지 | `nano_banana_pro` or `gpt_image_2` | 텍스트 있으면 GPT |
+| **비추천** | `wan_2_7` | 모션 부자연스러움 |
 
 ### 5. 샷 생성 (generate_video_batch)
 
