@@ -55,16 +55,19 @@ mcp__Higgsfield__video_analysis_status
   - **이미지 5요소**: Subject, Background, Composition, Lighting, Style
   - **영상 추가 3요소**: Camera Move, Subject Motion, Cut Duration
   - **오디오 3요소** (audio 있을 경우): BGM, SFX, Dialogue
-- 기본 모델 선택 기준:
+- 기본 모델 선택 기준 (2026년 최신):
 
-| 용도 | 추천 모델 | 비고 |
-|------|-----------|------|
-| 최고 품질 영상 | `seedance_2_5` | 크레딧 높음, end-game |
-| I2V·모션 컨트롤 | `kling3_0` | 가성비·품질 균형 최고 |
-| 빠른 드래프트 | `grok_imagine_2` | 속도·비용 우선 |
-| 일상·가성비 | `minimax_h3` | 멀티샷 지원 |
-| 4K 이미지 | `nano_banana_pro` or `gpt_image_2` | 텍스트 있으면 GPT |
-| **비추천** | `wan_2_7` | 모션 부자연스러움 |
+| 용도 | 추천 모델 | 크레딧 | 비고 |
+|------|-----------|--------|------|
+| 멀티샷 + 오디오 동기화 | `seedance_2_0` | 72/8s | 8개 언어 네이티브 립싱크 |
+| 최고 품질 시네마틱 | `seedance_2_5` | 높음 | 1080p 엔진, end-game |
+| 캐릭터·음성·4K 예산형 | `kling3_0` | **~6** | 가성비 최강, 4K 지원 |
+| 일상·드래프트·속도 | `minimax_hailuo_2_3_fast` | 최저 | 가장 빠르고 저렴 |
+| 프리미엄 시네마틱 | `sora_2` or `veo_3_1` | 40~70 | 최고 품질, 고비용 |
+| 4K 이미지 | `nano_banana_pro` or `gpt_image_2` | — | 텍스트 있으면 GPT |
+| **비추천** | `wan_2_7` | — | 모션 부자연스러움 (wan_2_6은 리스타일 전용) |
+
+> **핵심**: Kling 3.0은 ~6 크레딧/클립 → 드래프트 + 최종본 모두 경제적
 
 ### 5. 샷 생성 (generate_video_batch)
 
@@ -161,8 +164,15 @@ Text(기획) → Image(검토) → Video(완성)
 | Generate 3D / Audio / Image / Video | Ask Permission |
 | Upload Media / Sync Agents | Always Allow |
 
-### 캐릭터 일관성: @me 등록
+### 캐릭터 일관성: Soul ID (2026 권장) vs @me 등록
 
+**Soul ID (신규 — 권장)**:
+1. 사진 20~80장 업로드 (다양한 각도·조명)
+2. Soul ID 학습 완료 후 생성 시 선택
+3. 어떤 스타일·포즈에서도 동일 얼굴 유지
+4. Cinema Studio 3.5 + Soul ID 조합 = 전문 제작 수준
+
+**@me 등록 (레거시)**:
 1. 셀카 6장 (정면·측면·위아래)
 2. GPT Image 2.0으로 4K 캐릭터 시트 생성
 3. Cinema Studio → My Elements → `@me` 등록
@@ -287,3 +297,23 @@ claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.a
 ### 프롬프트 템플릿 라이브러리 구축
 
 잘 작동한 프롬프트를 저장해 자산화 — 클라이언트·콘텐츠 유형별 관리
+
+### 2026년 신규: LipSync Studio
+
+- **10개 립싱크 모델** 통합 (저화질 ~ Veo 3.1)
+- 녹화 1회 → 다국어 버전 자동 생성 (영어·스페인어·독일어 등)
+- Veo 3.1 LipSync: 58 크레딧/클립 (1080p)
+- Seedance 2.0은 동일 렌더 패스에서 네이티브 립싱크 지원 (별도 단계 불필요)
+
+### 2026년 플랜 가격
+
+| 플랜 | 월 요금 | 크레딧 | 활용 예시 |
+|------|---------|--------|----------|
+| Free | $0 | 150 | MCP 초기 테스트 |
+| Starter | $9 | 120 | Kling 3.0 ~20 클립 |
+| Plus | $49 | 1,000 | Veo 3.1 ~17 클립 또는 Kling ~167 클립 |
+
+### GitHub 커뮤니티
+
+- **AKCodez/higgsfield-claude-skills**: 19개 Claude Code 스킬 (이미지·영상·UGC 파이프라인)
+- Playwright 브라우저 자동화 포함

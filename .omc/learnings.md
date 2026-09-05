@@ -1,5 +1,91 @@
 # Higgsfield 학습 내용 (영상 분석 기반)
 
+## 외부 소스 학습 2차 (웹 리서치 2026-09 심화)
+소스: higgsfield.ai 공식 블로그, claudefa.st, aisuites.ai, workingnotworking.com, aifunnelinsider.com, vo3ai.com 등
+
+### MCP 출시일 및 현황
+
+- **MCP 정식 출시**: 2026년 4월 30일
+- **Higgsfield MCP 현재 무료** (free tier 별도)
+- 30+ 모델 접근 가능 (2026년 기준, 기존 15개 → 30+으로 대폭 확장)
+- Claude Web/Desktop: Settings → Connectors → higgsfield.ai/mcp URL 추가
+- Claude Code: `claude mcp add --transport http --scope user higgsfield https://mcp.higgsfield.ai/mcp`
+
+### 2026년 추가된 주요 모델
+
+| 모델 | 특징 | 크레딧/클립 |
+|------|------|------------|
+| `sora_2` | OpenAI Sora 2 — 최고 품질 | 40~70 크레딧 |
+| `veo_3_1` | Google Veo 3.1 — 장면 확장·조명 강점 | ~58 크레딧 (LipSync 1080p) |
+| `kling3_0` | 캐릭터·음성 4K — 매우 저렴 | **~6 크레딧** |
+| `seedance_2_0` | 네이티브 오디오, 8개 언어 립싱크 | 72 크레딧 (1080p 8s) |
+| `wan_2_6` | 리스타일링·리슈팅 전용 | — |
+| `minimax_hailuo_2_3_fast` | 속도·비용 우선 | 가장 저렴 |
+
+> **Kling 3.0 주목**: 6 크레딧/클립 → 드래프트는 물론 최종본에도 경제적
+
+### Soul ID — 캐릭터 일관성 솔루션 (신기능)
+
+- **@me 등록 방식 대체**: Soul ID는 별도 학습 기반 캐릭터 고정 시스템
+- **학습 사진**: 20~80장 (다양한 각도·조명 권장)
+- **효과**: 어떤 스타일·포즈·조명에서도 동일 얼굴 유지
+- **적용**: 생성 시 Soul ID 캐릭터 선택 → 프롬프트에 자동 반영
+- **Cinema Studio 연계**: Soul ID로 얼굴 고정 + Cinema Studio로 카메라 무브 고정 = 전문 제작 수준
+
+```
+Soul ID 설정 → 씬별 카메라 무브 (Cinema Studio 3.5) → 모델 선택 (Seedance/Kling/Veo)
+```
+
+### Cinema Studio 3.5 업그레이드
+
+- 가상 카메라 컨트롤이 실제 연출 도구 수준으로 발전
+- 독립 리뷰어들이 "단일 모델 플랫폼이 구조적으로 제공할 수 없는 유연성"으로 평가
+- Soul ID + Cinema Studio 조합: 하나의 스포크퍼슨이 Seedance 광고 → Kling 내러티브 → Veo 클로즈업 전환 시에도 동일 얼굴·의도된 카메라 무브 유지
+
+### LipSync Studio
+
+- **10개 립싱크 모델** 통합 (저화질 ~ Veo 3.1 고품질까지)
+- **다국어 지원**: 녹화 1회 → 영어·스페인어·독일어 등 다국어 버전 자동 생성
+- Veo 3.1 LipSync: 1080p 클립당 **58 크레딧**
+- Higgsfield Speak (보이스 클론 + 립싱크 동기화)
+
+### Seedance 2.0 네이티브 오디오
+
+- 동일 렌더 패스에서 **음소 단위(phoneme-level) 립싱크** 처리
+- **8개 언어** 지원 — 별도 LipSync 단계 불필요
+- 멀티샷 내러티브 + 오디오 동기화 → Seedance 2.0 최적
+
+### 2026년 플랜 가격 (업데이트)
+
+| 플랜 | 월 요금 | 크레딧 | 활용 |
+|------|---------|--------|------|
+| Free tier | $0 | 150 | MCP 테스트용 |
+| Starter | $9 | 120 | Kling 2.6 LipSync ~20 클립 |
+| Plus | $49 | 1,000 | Veo 3 클립 15~20개 또는 Kling ~100개 |
+
+### 2026 모델별 용도 지침 (업데이트)
+
+| 용도 | 최적 모델 | 이유 |
+|------|-----------|------|
+| 멀티샷 광고 + 오디오 동기화 | `seedance_2_0` | 네이티브 오디오, 8개 언어 |
+| 캐릭터·음성 일관성, 예산 고려 | `kling3_0` | ~6 크레딧/클립, 4K 지원 |
+| 일상·단기 숏폼·드래프트 | `minimax_hailuo_2_3_fast` | 가장 빠르고 저렴 |
+| 최고 품질 시네마틱 | `sora_2` or `veo_3_1` | 40~70 크레딧/클립 |
+| 비추천 | `wan_2_7` | 모션 부자연스러움 (wan_2_6은 리스타일 전용) |
+
+### GitHub 커뮤니티 리소스
+
+- **[AKCodez/higgsfield-claude-skills](https://github.com/AKCodez/higgsfield-claude-skills)**: 19개 Claude Code 스킬
+  - 이미지 생성, Seedance 2.0 영상, UGC 광고 파이프라인 자동화
+  - Playwright 브라우저 자동화 포함
+
+### Higgsfield CLI
+
+- `higgsfield.ai/cli` — 터미널에서 직접 명령어로 생성 가능
+- Claude Code와 병행하여 스크립트 자동화에 활용 가능
+
+---
+
 ## 외부 소스 학습 (웹 리서치 2026-09)
 소스: higgsfield.ai 공식 블로그, Medium, techsy.io, conceptbeans.com, digen.ai, Wikipedia 등
 
